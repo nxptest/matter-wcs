@@ -1,0 +1,44 @@
+From 16c1a6dcece4f2c7db282bdbdf1cbf5359c6d5f3 Mon Sep 17 00:00:00 2001
+From: David Lin <yu-hao.lin@nxp.com>
+Date: Fri, 27 May 2022 11:25:18 +0800
+Subject: [PATCH 1/2] Replaced mbedtls submodule to support tiny crypt.
+
+Signed-off-by: David Lin <yu-hao.lin@nxp.com>
+---
+ .gitmodules              | 8 ++++----
+ third_party/mbedtls/repo | 2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/.gitmodules b/.gitmodules
+index 6aa8ae5b0..fb4c157e3 100644
+--- a/.gitmodules
++++ b/.gitmodules
+@@ -14,10 +14,6 @@
+ 	path = third_party/nlunit-test/repo
+ 	url = https://github.com/nestlabs/nlunit-test.git
+ 	branch  = master
+-[submodule "mbedtls"]
+-	path = third_party/mbedtls/repo
+-	url = https://github.com/ARMmbed/mbedtls.git
+-	branch  = mbedtls-2.25.0
+ [submodule "qrcode"]
+ 	path = examples/common/QRCode/repo
+ 	url = https://github.com/nayuki/QR-Code-generator.git
+@@ -253,3 +249,7 @@
+ [submodule "third_party/nxp/mw320_sdk/repo"]
+ 	path = third_party/nxp/mw320_sdk/repo
+ 	url = https://github.com/nxptest/mw320_sdk
++[submodule "third_party/mbedtls/repo"]
++	path = third_party/mbedtls/repo
++	url = https://github.com/nxptest/mbedtls
++	branch = mbedtls-2.25.0_tiny_crypt
+diff --git a/third_party/mbedtls/repo b/third_party/mbedtls/repo
+index 1c54b5410..e76326e6f 160000
+--- a/third_party/mbedtls/repo
++++ b/third_party/mbedtls/repo
+@@ -1 +1 @@
+-Subproject commit 1c54b5410fd48d6bcada97e30cac417c5c7eea67
++Subproject commit e76326e6f5f20b3c014016980c5dce90027daf5e
+-- 
+2.25.1
+
