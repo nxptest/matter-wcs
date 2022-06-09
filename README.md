@@ -16,21 +16,28 @@ This repository keeps Matter patches for different wireless devices of NXP.
 
 The naming rule for the directory to store patches are as follows:
 
-1. \<device\>/patches/\<git account\>/branch/\<branch name\>
+1. \<device\>/patches/\<git account\>/branch/\<branch name\>\<submodule\>
 ```
 $ cd <device>
 $ git clone https://github.com/<git account>/connectedhomeip
 $ cd connectedhomeip
 $ git checkout -b <branch name> origin/<brnach name>
-$ git apply ../patches/<git account>/branch/<branch name>/*.patch
+$ git apply ../mw320/patches/<git account>/branch/<branch name>/*.patch
+$ git submodule update --init
+$ cd third_party/<submodule>/repo
+$ git apply ../../../../mw320/patches/<git account>/branch/<branch name>/<submodule>/*.patch
+$ cd ../../../
 ```
-2. \<device\>/patches/\<git account\>/tag/\<tag name\>
+2. \<device\>/patches/\<git account\>/tag/\<tag name\>\<submodule\>
 ```
 $ cd <device>
 $ git clone https://github.com/<git account>/connectedhomeip
 $ cd connectedhomeip
 $ git checkout tags/<tag_name> -b <tag name>
-$ git apply ../patches/<git account>/tag/<tag name>/*.patch
+$ git apply ../mw320/patches/<git account>/tag/<tag name>/*.patch
+$ cd third_party/<submodule>/repo
+$ git apply ../../../../mw320/patches/<git account>/tag/<tag name>/<submodule>/*.patch
+$ cd ../../../
 ```
 
 <a name="building"></a>
@@ -49,9 +56,11 @@ $ cd matter-wcs/mw320
 $ git clone https://github.com/nxptest/connectedhomeip
 $ cd connectedhomeip
 $ git checkout -b TE9_upstream origin/TE9_upstream
-$ git apply ../patches/nxptest/branch/TE9_upstream/*.patch
+$ git apply ../mw320/patches/nxptest/branch/TE9_upstream/*.patch
 $ git submodule update --init
-$ git submodule update --remote third_party/mbedtls/repo
+$ cd third_party/mbedtls/repo
+$ git apply ../../../../mw320/patches/nxptest/branch/TE9_upstream/mbedtls/*.patch
+$ cd ../../..
 $ source scripts/activate.sh
 $ cd examples/all-clusters-app/nxp/mw320
 $ gn gen out/debug
