@@ -1,7 +1,7 @@
-From a1998c8a25b679b74ae67cd5e5f4f97ceaf91612 Mon Sep 17 00:00:00 2001
+From 91ddf9a186af8c7771151181e1f79e9bc2bb9051 Mon Sep 17 00:00:00 2001
 From: David Lin <yu-hao.lin@nxp.com>
-Date: Fri, 27 May 2022 11:27:26 +0800
-Subject: [PATCH 2/2] Modified the code to support tiny crypt.
+Date: Mon, 6 Jun 2022 13:21:07 +0800
+Subject: [PATCH] Modified the code to support tiny crypt.
 
 Signed-off-by: David Lin <yu-hao.lin@nxp.com>
 ---
